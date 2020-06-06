@@ -1,0 +1,10 @@
+<div id="city-form">
+    <form (ngSubmit)="getCityWeather(city$)">
+        <input type="text" [(ngModel)]='city$' placeholder="City" name="cityName"/>
+        <button type="submit">+</button>
+    </form>
+
+    <div *ngIf="errorMessage$ | async">
+        <p>{{errorMessage$ | async}}</p>
+    </div>
+</div>
