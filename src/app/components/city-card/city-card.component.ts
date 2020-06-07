@@ -12,9 +12,10 @@ export class CityCardComponent implements OnInit {
 
   constructor(private store: Store<AppState>) { }
 
-  @Input() city: {
+  @Input() city: { 
     id: string,
-    name: string
+    name: string,
+    temp: number,
   };
 
   ngOnInit(): void {

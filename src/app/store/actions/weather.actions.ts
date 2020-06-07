@@ -24,7 +24,7 @@ export class AddCardSuccessAction implements Action {
 export class AddCardFailureAction implements Action {
     readonly type = WeatherActionTypes.ADD_CARD_FAILURE;
 
-    constructor(public payload: Error) {};
+    constructor(public payload: string) {};
 }
 
 export class DeleteCardAction implements Action {

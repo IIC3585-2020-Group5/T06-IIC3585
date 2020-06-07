@@ -1,10 +1,18 @@
 <div id="city-form">
-    <form (ngSubmit)="getCityWeather(city$)">
+    <form  (ngSubmit)="getCityWeather(city$)">
+    <mat-form-field error class="mr-2">
+        <mat-label>City</mat-label>
+        <input matInput [(ngModel)]='city$'  name="cityName">
+    </mat-form-field>
+    <button mat-raised-button type="submit" class="ml-2">Add</button>
+</form>
+
+    <!-- <form (ngSubmit)="getCityWeather(city$)">
         <input type="text" [(ngModel)]='city$' placeholder="City" name="cityName"/>
         <button type="submit">+</button>
     </form>
 
     <div *ngIf="errorMessage$ | async">
         <p>{{errorMessage$ | async}}</p>
-    </div>
+    </div> -->
 </div>

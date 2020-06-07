@@ -13,13 +13,22 @@ import { EffectsModule } from '@ngrx/effects';
 import { WeatherEffects } from './store/effects/weather.effects';
 import { CityFormComponent } from './components/city-form/city-form.component';
 import { CityCardComponent } from './components/city-card/city-card.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MapComponent } from './components/map/map.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatInputModule } from '@angular/material/input';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     WeatherListComponent,
     CityFormComponent,
-    CityCardComponent
+    CityCardComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +38,14 @@ import { CityCardComponent } from './components/city-card/city-card.component';
       weather: WeatherReducer,
     }),
     EffectsModule.forRoot([WeatherEffects]),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    BrowserAnimationsModule,
+    // Material UI
+    FlexLayoutModule,
+    MatCardModule,
+    MatButtonModule,
+    MatGridListModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -20,7 +20,9 @@ export class WeatherApiService {
           return {
             id: data.id, 
             city: data.name, 
-            temperature: parseFloat((data.main.temp - 273).toFixed(2))
+            temperature: parseFloat((data.main.temp - 273).toFixed(2)),
+            latitude: data.coord.lat,
+            longitude: data.coord.lon
           }
         }
       ));

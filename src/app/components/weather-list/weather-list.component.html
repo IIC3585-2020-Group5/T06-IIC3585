@@ -1,7 +1,7 @@
-<div id="weather-card-list">
-    <ul>
-        <li *ngFor="let card of cardList | async">
-           <app-city-card [city]="{name: card.city, id: card.id}"></app-city-card>
-        </li>
-    </ul>
+<div cols="5"  class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+    <div fxFlex="20%" *ngFor="let card of cardList | async">
+        <app-city-card [city]="{name: card.city, id: card.id, temp: card.temperature}"></app-city-card>
+     </div>
 </div>
+
+

@@ -25,8 +25,6 @@ export class CityFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.errorMessage$ = this.store.select(store => store.weather.error);
-
-    console.log(`Error: ${this.errorMessage$}`);
   }
 
 }

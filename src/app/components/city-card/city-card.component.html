@@ -1,4 +1,15 @@
 <div id="city-card">
-    {{city.name}}
-    <button type="button" (click)="deleteCityCard(city.id)">X</button>
+    <mat-card>
+        <mat-card-title>
+            {{city.name}}
+        </mat-card-title>
+        <mat-card-content>
+            The current temperature is {{city.temp}} &#176;C
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button color="primary">Details</button>
+            <button mat-button color="warn"  (click)="deleteCityCard(city.id)">Delete</button>
+        </mat-card-actions>
+    </mat-card>
+
 </div>

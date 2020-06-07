@@ -15,9 +15,13 @@ export class AppComponent implements OnInit{
   constructor(private store: Store<AppState>) {};
   
   weatherCards$: Observable<Array<WeatherCard>>;
+  latitude$;
+  longitude$;
 
   
   ngOnInit(): void {
     this.weatherCards$ = this.store.select(store => store.weather.cardList);
+    this.latitude$ = this.store.select(store => store.weather.mapLatitude);
+    this.longitude$ = this.store.select(store => store.weather.mapLongitude);
   }
 }
