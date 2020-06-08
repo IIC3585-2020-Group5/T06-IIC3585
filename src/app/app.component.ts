@@ -3,8 +3,6 @@ import { AppState } from './store/models/app-state.model';
 import { Store, createSelector } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import { WeatherCard } from './store/models/weather-card.model';
-import { AddCardAction } from './store/actions/weather.actions';
-import { first, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -31,7 +29,6 @@ export class AppComponent implements OnInit{
     }
 
   ) 
-
 
   ngOnInit(): void {
     this.weatherCards$ = this.store.select(this.selectWeatherCards);

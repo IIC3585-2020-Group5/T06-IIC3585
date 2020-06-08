@@ -47,7 +47,6 @@ export class MapComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    console.log("here");
     this.initMap();
   }
 
