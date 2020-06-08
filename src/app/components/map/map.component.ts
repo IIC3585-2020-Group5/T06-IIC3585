@@ -17,6 +17,7 @@ export class MapComponent implements OnInit, OnChanges {
   private map: L.Map;
   @Input() public lat;
   @Input() public lon;
+  @Input() public city;
 
   private initMap(): void {
     console.log(this.lon);
@@ -35,6 +36,8 @@ export class MapComponent implements OnInit, OnChanges {
 
   private setPosition(lat: number, lon: number) {
     this.map.panTo(new L.LatLng(lat, lon));
+    L.popup().setLatLng(new L.LatLng(lat, lon)).setContent(`<h2>${this.city}</h2><p>Latitude: ${this.lat}</p><p>Longitude: ${this.lon}</p>`).openOn(this.map);
+  
   }
 
   ngOnChanges(changes: SimpleChanges): void {
