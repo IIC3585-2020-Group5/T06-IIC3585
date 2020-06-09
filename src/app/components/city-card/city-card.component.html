@@ -7,7 +7,7 @@
             The current temperature is {{city.temp}} &#176;C
         </mat-card-content>
         <mat-card-actions>
-            <button mat-button color="primary">Details</button>
+            <button mat-button color="primary" (click)="getCityForecast(city.name)">Details</button>
             <button mat-button color="warn"  (click)="deleteCityCard(city.id)">Delete</button>
         </mat-card-actions>
     </mat-card>

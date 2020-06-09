@@ -1,12 +1,15 @@
 import { Action } from '@ngrx/store';
-import { WeatherCard } from '../models/weather-card.model';
+import { WeatherCard, WeatherForecastCard } from '../models/weather-card.model';
 
 
 export enum WeatherActionTypes {
     ADD_CARD = '[WEATHER] Add Card',
     ADD_CARD_SUCCESS = '[WEATHER] Add Card Success',
     ADD_CARD_FAILURE = '[WEATHER] Add Card Failure',
-    DELETE_CARD = '[WEATHER] Delete Card'
+    DELETE_CARD = '[WEATHER] Delete Card',
+    ADD_FORECAST = '[FORECAST] Add Forecast',
+    ADD_FORECAST_SUCCESS = '[FORECAST] Add Forecast Success',
+    ADD_FORECAST_FAILURE = '[FORECAST] Add Forecast Failure',
 }
 
 export class AddCardAction implements Action {
@@ -34,8 +37,32 @@ export class DeleteCardAction implements Action {
 }
 
 
+// Forecast
+
+export class AddForecastAction implements Action {
+    readonly type = WeatherActionTypes.ADD_FORECAST;
+
+    constructor(public payload: string) {};
+}
+
+export class AddForecastSuccessAction implements Action {
+    readonly type = WeatherActionTypes.ADD_FORECAST_SUCCESS;
+
+    constructor(public payload: WeatherForecastCard) {};
+}
+
+export class AddForecastFailureAction implements Action {
+    readonly type = WeatherActionTypes.ADD_FORECAST_FAILURE;
+
+    constructor(public payload: string) {};
+}
+
+
 
 export type WeatherAction = AddCardAction
                         |   AddCardSuccessAction
                         |   AddCardFailureAction
-                        |   DeleteCardAction;
+                        |   DeleteCardAction
+                        |   AddForecastAction
+                        |   AddForecastSuccessAction
+                        |   AddForecastFailureAction;

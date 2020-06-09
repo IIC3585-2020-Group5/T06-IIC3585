@@ -19,7 +19,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
-import { FlexLayoutModule } from '@angular/flex-layout';
+import { FlexLayoutModule } from '@angular/flex-layout'; 
+import { MatDialogModule } from '@angular/material/dialog';
+import { ChartsModule } from 'ng2-charts';
+import { ForecastChartComponent,  } from './components/forecast-chart/forecast-chart.component';
 
 
 @NgModule({
@@ -28,7 +31,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     WeatherListComponent,
     CityFormComponent,
     CityCardComponent,
-    MapComponent
+    MapComponent,
+    ForecastChartComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,12 +44,14 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     EffectsModule.forRoot([WeatherEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     BrowserAnimationsModule,
+    ChartsModule,
     // Material UI
     FlexLayoutModule,
     MatCardModule,
     MatButtonModule,
     MatGridListModule,
     MatInputModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

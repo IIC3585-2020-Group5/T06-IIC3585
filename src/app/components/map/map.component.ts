@@ -20,7 +20,6 @@ export class MapComponent implements OnInit, OnChanges {
   @Input() public city;
 
   private initMap(): void {
-    console.log(this.lon);
     this.map = L.map('map', {
       center: [ this.lat, this.lon ],
       zoom: 13
@@ -41,7 +40,7 @@ export class MapComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (this.map) {
+    if (this.map && changes.lat ) {
       this.setPosition(changes.lat.currentValue, changes.lon.currentValue);
     }
   }

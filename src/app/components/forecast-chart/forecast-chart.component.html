@@ -1,0 +1,27 @@
+
+<h2 mat-dialog-title>Forecast</h2>
+
+<mat-dialog-content>
+    <div *ngIf="lineChartData !== null">
+        <div class="flex">
+          <div class="flex-item">
+            <div style="display: block;">
+              <!-- <div *ngIf="(tempList$ | async).length > 0">  
+              <p>Forecast</p>
+              <li *ngFor="let a of (tempList$ | async)">
+                  {{a}}
+              </li>  
+            </div> -->
+              <canvas baseChart width="400" height="400" 
+              [datasets]="lineChartData" 
+              [labels]="lineChartLabels"
+              [options]="lineChartOptions" 
+              [colors]="lineChartColors" 
+              [legend]="lineChartLegend"
+              [chartType]="lineChartType">
+              </canvas>
+            </div>
+          </div>
+        </div>
+    </div>
+</mat-dialog-content>
